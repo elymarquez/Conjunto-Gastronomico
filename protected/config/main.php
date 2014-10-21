@@ -86,13 +86,13 @@ return array(
 				//		'afterLoginUrl'=>array('/site/welcome'),  ( !!! no olvidar el slash inicial / )
 				//		'afterLogoutUrl'=>array('/site/page','view'=>'about'),
 				//
-				'afterLoginUrl'=>'//',
+				'afterLoginUrl'=>array('/layouts/restaurantLayout.php'),
 				'afterLogoutUrl'=>null,
 				'afterSessionExpiredUrl'=>null,
 
 				// manejo del layout con cruge.
 				//
-				'loginLayout'=>'//layouts/column2',
+				'loginLayout'=>'//layouts/loginLayout',
 				'registrationLayout'=>'//layouts/column2',
 				'activateAccountLayout'=>'//layouts/column2',
 				'editProfileLayout'=>'//layouts/column2',
