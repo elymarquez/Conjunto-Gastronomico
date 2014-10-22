@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Conjunto Gastronomico</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui-1.10.3.custom.css">
 	<script type="text/javascript">
@@ -14,7 +15,9 @@
 	<header> <!--todas las paginas iguales -->
 		<h1><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logopenco.png" width="350" height="150"></h1>
 	</header>
-	<nav class="navbar navbar-default" role="navigation">
+	
+  <!-- BARRA DE MENÚ -->
+  <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -24,14 +27,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">SG - Penco</a> <!-- Nombre del Sistema -->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="#">Bodega</a></li>
+        <li><a href="#">Cocina</a></li>
+        <li><a href="#">Restaurant</a></li>
+        <li><a href="#">Garzón</a></li>
+        <li><a href="#">Proveedor</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -67,7 +73,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<!-- FIN BARRA DE MENÚ -->
 
+ <!-- Contenido dependiendo de cada página -->
  <?php 
     if(isset($content)) 
       echo $content;
