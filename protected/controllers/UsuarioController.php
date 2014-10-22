@@ -5,21 +5,33 @@ class UsuarioController extends Controller
 	
 	public $layout='//layouts/loginLayout';
 
+	public function filters()
+	{
+		return array(
+			'accessControl',  //se requiere que el usuario deba haber iniciado sesion exitosamente
+			'postOnly + delete',  //puede crear en la base de datos y eiminar
+		);
+	}
+
 	public function accessRules()
 	{
 		return array(
 			array('allow',
-				'action'=>array('login'),
+				'actions'=>array('login'),
 				'users'=>array('*'),
-				),
+			),
+			array('allow', 
+				'actions'=>array('index','eliminarUsuario','crearUsuario','editarUsuario', 'administrar'),
+				'users'=>array('admin'),
+			),
 			array('allow',
-				'action'=>array('index'),
+				'actions'=>array('update','logout',''),
 				'users'=>array('@'),
-				),
+			),
 			array('deny',
 				'users'=>array('*'),
-			)
-			);
+			),
+		);
 	}
 
 	//Login
@@ -40,11 +52,20 @@ class UsuarioController extends Controller
 			if($model->validate() && $model->login())
 					$this->redirect(Yii::app()->user->returnUrl);
 		}
-		//Carga Su propia Layout
-		//$this->layout='loginLayout';
 		$this->render('login',array('model'=>$model)); //vista, array(modelo)
 	}
 
+	public function actionIndex()
+	{
+
+	$this->redirect('Usuario/login'); //redirecciona a carpeta usuario, vista login.
+	}
+
+	public function actionAdministrar()
+	{
+		$this->layout='restaurantLayout';
+		$this->render('administrar');
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
@@ -81,12 +102,6 @@ class UsuarioController extends Controller
 	public function actionEditarUsuario()
 	{
 		$this->render('editarUsuario'); //render = carga una pagina
-	}
-
-	public function actionIndex()
-	{
-
-	$this->redirect('Usuario/login'); //redirecciona
 	}
 
 }

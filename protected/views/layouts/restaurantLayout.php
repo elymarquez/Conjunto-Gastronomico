@@ -68,21 +68,29 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-</div> <!--Fin Container-->
+ <?php 
+    if(isset($content)) 
+      echo $content;
+    else 
+     echo '
+   <div class="alert alert-danger">
+   <strong>No se a cargado la Pagina</strong> No tiene los permisos para acceder a la pagina.
+   </div>'
+   ;?>
 
 <footer>
    		yes!!
-   </footer>
+</footer>
    <!--Fin Footer-->
 
-  </div>
-    <!-- FIN cntainer -->
+</div> <!--Fin Container-->
+
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js" type="text/javascript"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/demo.js" type="text/javascript"></script>
 
 
-
+<?php echo Yii::app()->user->ui->displayErrorConsole(); ?>
 </body>
 </html>

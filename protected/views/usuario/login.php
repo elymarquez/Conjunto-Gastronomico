@@ -2,8 +2,8 @@
 /* @var $this UsuarioController */
 
 $this->breadcrumbs=array(
-	'Usuario'=>array('/usuario'),
-	'Login',
+	'Usuario'=>array('/usuario'), //controlador/carpeta
+	'Login', //accion
 );
 ?>
 <?php

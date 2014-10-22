@@ -15,7 +15,7 @@ return array(
     'charset'=>'utf-8',
     //Yii-Bootstrap
      'aliases' => array(
-        'bootstrap' => 'ext.bootstrap'
+     'bootstrap' => 'ext.bootstrap'
     ),
 
 	// preloading 'log' component
@@ -86,9 +86,9 @@ return array(
 				//		'afterLoginUrl'=>array('/site/welcome'),  ( !!! no olvidar el slash inicial / )
 				//		'afterLogoutUrl'=>array('/site/page','view'=>'about'),
 				//
-				'afterLoginUrl'=>array('/layouts/restaurantLayout.php'),
-				'afterLogoutUrl'=>null,
-				'afterSessionExpiredUrl'=>null,
+				'afterLoginUrl'=>array('/usuario/administrar'), //despues de autenticar
+				'afterLogoutUrl'=>null, //despues de cerrar sesion
+				'afterSessionExpiredUrl'=>null, //despues de expirar el tiempo
 
 				// manejo del layout con cruge.
 				//
