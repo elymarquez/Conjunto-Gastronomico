@@ -12,7 +12,11 @@
 <div class="container"> <!-- Tamaño predeterminado en bootstrap.css-->
 	<!-- Cabecera -->
 	<header>
+		<div class="logo">
 		<h1><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logopenco.png" width="350" height="150"></h1>
+		</div>
+		<div class="name"><h3>Sistema Gastronomico Penco</h3>
+		</div>	
 	</header>
 <div class="row">
   <div class="col-xs-4 col-sm-2">primero
