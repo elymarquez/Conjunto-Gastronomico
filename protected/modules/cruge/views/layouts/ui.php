@@ -17,8 +17,8 @@
 ?>
 
 <?php	
-	if(Yii::app()->user->isSuperAdmin)
-		echo Yii::app()->user->ui->superAdminNote();
+	/*if(Yii::app()->user->isSuperAdmin) //Aqui va el nombre del Super usuario en la parte superior de la vista
+		echo Yii::app()->user->ui->superAdminNote();*/ 
 ?>
 <div class="container">
 	<div class="span-19">

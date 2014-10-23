@@ -8,7 +8,7 @@ class UsuarioController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl',  //se requiere que el usuario deba haber iniciado sesion exitosamente
+			array('CrugeAccessControlFilter'),  //se requiere que el usuario deba haber iniciado sesion exitosamente
 			'postOnly + delete',  //puede crear en la base de datos y eiminar
 		);
 	}
