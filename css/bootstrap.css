@@ -13,20 +13,12 @@ html {
 body {
   margin: 0;
 }
-
-header .logo{
-}
-
-header .name{
-  font-family: sans-serif;
-  font-style: italic;
-}
-
 aside,
 details,
 figcaption,
 figure,
 footer,
+header,
 hgroup,
 main,
 nav,
