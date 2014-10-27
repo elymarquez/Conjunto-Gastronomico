@@ -34,10 +34,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
     
-    
+
+      <li class="dropdown"><a href='#'>Usuarios</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Crear usuario</a></li>
+              </ul>
+      </li>
+       
+        <li><a href="#">Restaurant</a></li>
         <li><a href="#">Bodega</a></li> <!--class="active">-->
         <li><a href="#">Cocina</a></li>
-        <li><a href="#">Restaurant</a></li>
+       
         <li><a href="#">Garzón</a></li>
         <li><a href="#">Proveedor</a></li>
         <li><a<?php $this->widget('zii.widgets.CMenu',array('items'=>array(
@@ -70,11 +77,14 @@
           </ul>
 
     </div><!-- /.navbar-collapse -->
+
+
   </div><!-- /.container-fluid -->
 </nav>
 <!-- FIN BARRA DE MENÚ -->
 
  <!-- Contenido dependiendo de cada página -->
+ <a href="<?php echo Yii::app()->createUrl('Usuario/CrearUsuario')?>">Crear usuario</a>
  <?php 
     if(isset($content)) 
       echo $content;
@@ -86,7 +96,7 @@
    ;?>
 
 <footer>
-   		yes!!
+   	
 </footer>
    <!--Fin Footer-->
 

@@ -64,7 +64,16 @@ class UsuarioController extends Controller
 	public function actionAdministrar()
 	{
 		$this->layout='restaurantLayout';
-		$this->render('administrar');
+
+		//mostrará la lista de restaurantes
+		//Vista Simple de Administracion dependiendo del Role de Usuario
+		if(Yii::app()->user->name == 'admin')
+		{//busca a todos los elementos de la Vista Usu_Todos
+		$users=VistaUsuarios::model()->findAll();
+		$this->render('administrar',array('users'=>$users));
+		}
+		
+		//$this->render('administrar');
 	}
 	/**
 	 * This is the action to handle external exceptions.
@@ -96,6 +105,8 @@ class UsuarioController extends Controller
 
 	public function actionCrearUsuario()
 	{
+		$this->layout='restaurantLayout';
+		
 		$this->render('crearUsuario');
 	}
 
