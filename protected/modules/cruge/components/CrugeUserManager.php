@@ -843,11 +843,18 @@ class CrugeUserManager
         // si el username no fue provisto se creará uno en base
         // al email:
         //
-        $password = CrugeUtil::passwordGenerator();
+        //$password = CrugeUtil::passwordGenerator();
+
         $user = $this->createBlankUser();
         $user->email = $mapped_values['email'];
         if (isset($mapped_values['username'])) {
             $user->username = $mapped_values['username'];
+        }
+        if (isset($mapped_values['password'])) {
+            $password = $mapped_values['password'];
+        }else
+        {
+            $password = CrugeUtil::passwordGenerator();
         }
         // genera un username si el provisto es vacio
         if (empty($user->username)) {

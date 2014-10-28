@@ -4,6 +4,7 @@ class PersonaController extends Controller
 {
 	public function actionAgregarPersona()
 	{
+		
 		$this->render('agregarPersona');
 	}
 
@@ -16,7 +17,7 @@ class PersonaController extends Controller
 	{
 		$this->render('eliminarPersona');
 	}
-
+	
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()

@@ -106,13 +106,56 @@ class UsuarioController extends Controller
 	public function actionCrearUsuario()
 	{
 		$this->layout='restaurantLayout';
-		
+		//despues de crear usuario: if($model->save()){ createCrugeUser($model->rut,$model->email,$model->password);}
 		$this->render('crearUsuario');
 	}
 
 	public function actionEditarUsuario()
 	{
 		$this->render('editarUsuario'); //render = carga una pagina
+	}
+
+	public function createCrugeUser($username,$email,$password)
+	{
+		$values = array(
+			'username' => $username,
+			'email' => $email,
+			'password' => $password
+		);
+		$usuario = Yii::app()->user->um->createNewUser($values);
+		//RECIEN ACÁ TIENES ACCESO AL IDUSER
+		//la consulta es algo como: select iduser from cruge_user where username = rut
+	}
+
+	public function asignaRolUsuario($iduser, $rol)
+	{
+		Yii::app()->db->createCommand("INSERT INTO `cruge_authassignment`(`userid`, `data`, `itemname`) VALUES ('$iduser','N;','$rol')")->execute();
+	}
+
+	public function demo_funcion()
+	{
+		/**
+		Para controlar el acceso por rol, de forma no automática, se usa:
+		Yii::app()->user->checkAccess('rol');
+		lo anterior, retorna true o false.
+		Ej:
+		if(Yii::app()->user->checkAccess('rol')){
+			//significa que si el usuario actual tiene el rol 'rol' podrá hacer esto
+		}
+		Esto mismo sirve en layout/main.php, para ocultar menues: 'visible'=> Yii::app()->user->checkAccess('rol')
+		*/
+
+		$model = new Persona;
+
+		//formulario post y todo
+
+		if ($model->save()) {
+			$model_ = new Usuario;
+			$model_->per_id = $model->id;
+			//bla bla
+			if($model_->save())
+				//por acá iría lo de cruge
+		}
 	}
 
 }

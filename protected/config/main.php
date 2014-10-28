@@ -10,6 +10,7 @@ return array(
 	'name'=>'Sistema Penco',
 	'language'=>'es',
 	'defaultController'=>'Usuario',
+	'theme' => 'miTema',
 
 	'sourceLanguage' => 'es',
     'charset'=>'utf-8',
